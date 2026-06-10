@@ -6,6 +6,7 @@
 import React from 'react';
 import { Award, ShieldCheck, Heart, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
+import lauraPortrait from '../assets/images/laura_portrait_1781026890375.png';
 
 export default function AboutLaura() {
   const bioBullets = [
@@ -50,7 +51,7 @@ export default function AboutLaura() {
               {/* Image Container with high shadow & elegant arch shape */}
               <div className="relative z-10 rounded-t-full overflow-hidden shadow-[0_12px_40px_rgba(47,51,48,0.08)] max-w-xs sm:max-w-sm border border-[#EDEDE4]">
                 <img
-                  src="/src/assets/images/laura_portrait_1781026890375.png"
+                  src={lauraPortrait}
                   alt="Laura, Operatrice Olistica e Consulente Spirituale"
                   className="w-full h-auto object-cover transform hover:scale-102 transition-transform duration-700 ease-out"
                   referrerPolicy="no-referrer"
