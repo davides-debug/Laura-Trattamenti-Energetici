@@ -1,51 +1,37 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Laura - Trattamenti Energetici
 
-# Run and deploy your AI Studio app
+Sito professionale per Laura, operatrice olistica e spirituale. Un'esperienza fluida e rilassante per il benessere di corpo, mente e anima.
 
-This contains everything you need to run your app locally.
+## Sviluppo Locale
 
-View your app in AI Studio: https://ai.studio/apps/9f6eab74-14a5-4e59-85c3-026c0b5b849c
+**Prerequisiti:** Node.js (v22 o superiore)
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
+1. Installa le dipendenze:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Avvia l'ambiente di sviluppo:
    `npm run dev`
+3. Apri `http://localhost:3000` nel browser.
 
 ## Deployment
 
-Il sito è configurato per essere pubblicato su **GitHub Pages**.
+Il sito è ottimizzato per **GitHub Pages** e offre due modalità di pubblicazione.
 
-### Passaggi per la pubblicazione:
+### Opzione A: GitHub Actions (Automatica - Consigliata)
+Ogni volta che fai un `push` sul ramo `main`, il sito viene compilato e pubblicato automaticamente.
+1. Carica il codice su GitHub.
+2. Vai in **Settings > Pages**.
+3. Sotto "Build and deployment > Source", seleziona **GitHub Actions**.
+4. Il sito sarà online in pochi minuti.
 
-1.  **Configurazione `vite.config.ts`**:
-    Assicurati che il campo `base` in `vite.config.ts` corrisponda al nome della tua repository:
-    ```typescript
-    export default defineConfig({
-      base: "/Laura-Trattamenti-Energetici/",
-      // ...
-    });
-    ```
+### Opzione B: Manuale (Tramite script)
+Se preferisci gestire il deploy manualmente dal tuo computer:
+1. **Configurazione**: Assicurati che `base` in `vite.config.ts` corrisponda al nome della tua repo (es: `/Laura-Trattamenti-Energetici/`).
+2. **Esegui**:
+   ```bash
+   npm run deploy
+   ```
+3. **Configurazione GitHub**: In **Settings > Pages**, imposta il branch su `gh-pages`.
 
-2.  **Build del progetto**:
-    Esegui il comando per generare i file statici:
-    ```bash
-    npm run build
-    ```
-    I file verranno generati nella cartella `dist`.
-
-3.  **Pubblicazione su GitHub Pages**:
-    Il pacchetto `gh-pages` è già installato e configurato. Per pubblicare il sito, esegui semplicemente:
-    ```bash
-    npm run deploy
-    ```
-
-4.  **Configurazione GitHub**:
-    Su GitHub, vai nelle impostazioni della repository (**Settings > Pages**) e assicurati che la sorgente sia impostata su `gh-pages` branch.
+### Note Importanti
+- **Immagini**: Usa sempre gli import ESM in React (`import img from './assets/...'`) per garantire che i percorsi siano corretti dopo il build.
+- **Base Path**: Se cambi il nome della repository, ricordati di aggiornare il campo `base` in `vite.config.ts`.
