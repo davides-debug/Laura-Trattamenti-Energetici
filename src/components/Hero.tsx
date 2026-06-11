@@ -6,6 +6,7 @@
 import React from 'react';
 import { Compass, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
+import heroBg from '../assets/images/laura_hero_bg_1781026625367.png';
 
 interface HeroProps {
   onScrollToSection: (sectionId: string) => void;
@@ -20,7 +21,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
       {/* Background Image with Elegant Gradient Overlays */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/laura_hero_bg_1781026625367.png"
+          src={heroBg}
           alt="Serene daylight filtering through sage leaves, glowing warm light, spiritual atmosphere"
           className="w-full h-full object-cover object-center scale-102 select-none opacity-85"
           referrerPolicy="no-referrer"
